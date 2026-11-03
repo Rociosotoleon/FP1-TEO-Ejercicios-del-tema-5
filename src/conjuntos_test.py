@@ -67,7 +67,7 @@ def test_intersecta_conjuntos():
 
     print(" OK")
 
-test_elimina_duplicados()
+#test_elimina_duplicados()
 #test_une_conjuntos()
-#test_intersecta_conjuntos()
+test_intersecta_conjuntos()
 print("Todos los tests pasaron correctamente.")
