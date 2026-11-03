@@ -11,8 +11,17 @@ def sustituye_palabras(texto: str, diccionario: dict[str, str]) -> str:
     Devuelve:
         Texto resultante de las sustituciones.
     """
-    # TODO: Implementar la función
-    pass
+    palabras = texto.split()
+    palabras_sustituidas = []
+    for palabra in palabras:
+        if palabra in diccionario: #si palabra es una clave de diccionario
+            palabras_sustituidas.append(diccionario[palabra])
+        else:
+            palabras_sustituidas.append(palabra) 
+        #res += diccionario.get(palabra, palabra)
+    
+    return " ".join(palabras_sustituidas) 
+
 
 
 def indexa_por_iniciales(texto: str) -> dict[str, set[str]]:
@@ -28,8 +37,15 @@ def indexa_por_iniciales(texto: str) -> dict[str, set[str]]:
          que comienzan por dicha inicial.
     
     """
-    # TODO: Implementar la función
-    pass
+    # TODO: se puede hacer sin el if?
+    res = {}
+    for palabra in texto.lower().split():
+        clave = palabra[0]
+        if clave in res:
+            res[clave].add(palabra)
+        else:
+            res[clave] = {palabra}
+    return res
 
 def construye_frecuencias_bigramas(texto: str) -> dict[str, float]:
     """
